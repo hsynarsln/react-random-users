@@ -19,37 +19,36 @@ const User = props => {
   // console.log({ dob });
   // console.log({ registered });
   return (
-    <Card sx={{ maxWidth: 400, background: '#cca376', boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)', margin: '3% auto' }}>
+    <Card sx={{ maxWidth: 400, background: '#955251', boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.75)', margin: '3% auto' }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ width: 120, height: 120 }} aria-label='recipe'>
+          <Avatar sx={{ width: 100, height: 100 }} aria-label='recipe'>
             <img src={picture.large} alt='' />
           </Avatar>
         }
         title={`${name.title}  ${name.first}  ${name.last}`}
       />
-      {/* <CardMedia component='img' height='194' image={picture.large} alt={name.first} /> */}
       <CardContent>
-        <Typography variant='h6' color='text.secondary' align='justify'>
+        <Typography sx={{ display: 'flex', justifyContent: 'space-between', margin: '0 10%' }} variant='subtitle1' color='text.primary' align='justify'>
           <EmailSharpIcon />
           {email}
         </Typography>
         <hr />
-        <Typography variant='h6' color='text.secondary' align='justify'>
+        <Typography sx={{ display: 'flex', justifyContent: 'space-between', margin: '0 10%' }} variant='subtitle1' color='text.primary' align='justify'>
           <LocationOnSharpIcon />
           {`${location.city} / ${location.country}`}
         </Typography>
         <hr />
-        <Typography variant='h6' color='text.secondary' align='justify'>
+        <Typography sx={{ display: 'flex', justifyContent: 'space-between', margin: '0 10%' }} variant='subtitle1' color='text.primary' align='justify'>
           <LocalPhoneSharpIcon />
           {phone}
         </Typography>
         <hr />
-        <Typography variant='body1' color='text.secondary' align='center'>
-          Age: {dob.age}
+        <Typography variant='body1' color='text.primary' align='center'>
+          <strong>Age:</strong> {dob.age}
         </Typography>
-        <Typography variant='body1' color='text.secondary'>
-          Registered: {registered.date}
+        <Typography variant='body1' color='text.primary'>
+          <strong>Registered Date:</strong> {registered.date.substr(0, 10)}
         </Typography>
       </CardContent>
     </Card>
