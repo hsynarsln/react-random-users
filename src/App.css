@@ -1,7 +1,15 @@
 .App {
   text-align: center;
   align-items: center;
-  background-color: #d3d3d3;
+  background: -webkit-linear-gradient(top, #e3e0cf 30%, #e3e0cf 30%, #f6f6f8 30%); /* Chrome10+,Safari5.1+ */
   height: 100vh;
   width: 100vw;
+  padding-top: 5%;
+}
+
+.button_group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1% 35%;
 }

@@ -1,7 +1,8 @@
+import DeleteIcon from '@mui/icons-material/Delete';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 
-const Row = ({ row }) => {
+const Row = ({ row, deleteTask }) => {
   // console.log(props);
   const { name, email, dob, cell } = row;
 
@@ -13,6 +14,9 @@ const Row = ({ row }) => {
       <TableCell align='center'>{email}</TableCell>
       <TableCell align='center'>{cell}</TableCell>
       <TableCell align='center'>{dob.age}</TableCell>
+      <TableCell align='center'>
+        <DeleteIcon onClick={() => deleteTask(email)} />
+      </TableCell>
     </TableRow>
   );
 };

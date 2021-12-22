@@ -8,14 +8,14 @@ import TableRow from '@mui/material/TableRow';
 import * as React from 'react';
 import Row from './Row';
 
-const UserTable = ({ tableData }) => {
+const UserTable = ({ tableData, deleteTask }) => {
   // console.log(props.tableData);
-  console.log(tableData);
+  // console.log(tableData);
   // const { name, email, cell, dob } = tableData.user;
 
   return (
-    <TableContainer component={Paper} style={{ width: '60%', margin: 'auto', marginTop: '20px' }}>
-      <Table sx={{ minWidth: 800 }} size='small' aria-label='a dense table'>
+    <TableContainer component={Paper} style={{ width: '50%', margin: 'auto', marginTop: '20px' }}>
+      <Table sx={{ maxWidth: 1000 }} size='small' aria-label='a dense table'>
         <TableHead style={{ backgroundColor: 'gray' }}>
           <TableRow>
             <TableCell align='center'>
@@ -30,11 +30,14 @@ const UserTable = ({ tableData }) => {
             <TableCell align='center'>
               <strong>Age</strong>
             </TableCell>
+            <TableCell align='center'>
+              <strong>Tools</strong>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {tableData.map(row => (
-            <Row row={row} />
+            <Row row={row} deleteTask={deleteTask} key={row.email} />
           ))}
         </TableBody>
       </Table>
